@@ -2,6 +2,9 @@
 
 /**
  * main - Prints out a string using puts
+ * @string - stores the string
+ *
+ * Return: End of function main
  */
 int main(void)
 {
