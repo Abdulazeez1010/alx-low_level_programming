@@ -13,7 +13,7 @@ int main(void)
 	i = 'A';
 	while (i <= 'Z')
 	{
-		if(i == 'Q' || i == 'E')
+		if (i == 'Q' || i == 'E')
 		{
 			i++;
 		} else
