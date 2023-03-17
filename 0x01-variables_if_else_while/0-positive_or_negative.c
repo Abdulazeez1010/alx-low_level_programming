@@ -3,7 +3,7 @@
 #include <time.h>
 
 /**
- * main - prints number is positive or negative
+ * main - prints positive or negative number
  * @n: number
  *
  * Return: Number is positive or negative
@@ -14,6 +14,8 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+
+	/* Check if n is positive or negative*/
 	if (n > 0)
 	{
 		printf("%d is positive\n", n);
