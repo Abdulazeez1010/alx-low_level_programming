@@ -16,15 +16,22 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	l = n % 10;
+	if (l > 0)
+	{
+		l = l;
+	} else if (l < 0)
+	{
+		l = -l;
+	}
 	if (l > 5)
 	{
-		printf("Last digit of %d is greater than 5\n", n);
+		printf("Last digit of %d is greater than 5 and l is %d \n", n, l);
 	} else if (l < 6 && l != 0)
 	{
-		printf("Last digit of %d is less than 6 and not 0\n", n);
+		printf("Last digit of %d is less than 6 and not 0and l is %d \n", n, l);
 	} else if (l == 0)
 	{
-		printf("Last digit of %d is 0\n", n);
+		printf("Last digit of %d is 0 and l is %d \n", n, l);
 	}
 	return (0);
 }
