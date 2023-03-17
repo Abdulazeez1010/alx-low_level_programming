@@ -4,9 +4,6 @@
 
 /**
  * main - Prints the last digit of a random number
- * @n: random number
- * @l: Last digit of number
- *
  * Return: The last digit
  */
 int main(void)
