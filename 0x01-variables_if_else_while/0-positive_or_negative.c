@@ -4,7 +4,7 @@
 
 /**
  * main - prints number is positive or negative
- * @n: random number
+ * @n: number
  *
  * Return: Number is positive or negative
  */
