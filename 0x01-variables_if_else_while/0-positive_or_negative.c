@@ -7,8 +7,6 @@
 
 /**
  * main - prints positive or negative number
- * @n: number
- *
  * Return: Number is positive or negative
  */
 int main(void)
