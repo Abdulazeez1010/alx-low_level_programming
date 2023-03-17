@@ -8,16 +8,16 @@
  */
 int main(void)
 {
-        int i = 'A';
-
+        int i, j;
+	
+	i = 'A';
         while (i <= 'Z')
         {
                 putchar(tolower(i));
                 i++;
         }
 	
-	int j = 'A';
-
+	j = 'A';
 	while (j <= 'Z')
 	{
 		putchar(toupper(j));
