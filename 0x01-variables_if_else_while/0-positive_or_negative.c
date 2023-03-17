@@ -4,9 +4,9 @@
 
 /**
  * main - prints number is positive or negative
- * @n: stores the value of number
+ * @n: stores value of number
  *
- * Return - Always 0 (success)
+ * Return: Number is positive or negative
  */
 int main(void)
 {
