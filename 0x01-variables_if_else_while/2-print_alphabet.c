@@ -7,11 +7,14 @@
  */
 int main()
 {
-	for (int i = 'A'; i <= 'Z'; i++)
+	int i = 'A';
+	while (i <= 'Z')
 	{
 		putchar(tolower(i));
+		i++;
 	}
 	putchar('\n');
+	
 
 	return(0);
 }
