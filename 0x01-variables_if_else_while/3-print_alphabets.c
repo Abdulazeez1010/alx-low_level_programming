@@ -9,10 +9,10 @@
 int main(void)
 {
 	int i, j;
-	
+
 	i = 'A';
 	while (i <= 'Z')
-        {
+	{
 		putchar(tolower(i));
 		i++;
 	}
@@ -24,6 +24,5 @@ int main(void)
 		j++;
 	}
 	putchar('\n');
-	
 	return (0);
 }
