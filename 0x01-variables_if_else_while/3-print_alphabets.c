@@ -8,22 +8,22 @@
  */
 int main(void)
 {
-        int i, j;
+	int i, j;
 	
 	i = 'A';
-        while (i <= 'Z')
+	while (i <= 'Z')
         {
-                putchar(tolower(i));
-                i++;
-        }
-	
+		putchar(tolower(i));
+		i++;
+	}
+
 	j = 'A';
 	while (j <= 'Z')
 	{
 		putchar(toupper(j));
 		j++;
 	}
-        putchar('\n');
-
-        return (0);
+	putchar('\n');
+	
+	return (0);
 }
