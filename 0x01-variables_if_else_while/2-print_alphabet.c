@@ -5,16 +5,16 @@
  * main - prints alphabet in lower case
  * Return: returns 0
  */
-int main()
+int main(void)
 {
 	int i = 'A';
+
 	while (i <= 'Z')
 	{
 		putchar(tolower(i));
 		i++;
 	}
 	putchar('\n');
-	
 
-	return(0);
+	return (0);
 }
