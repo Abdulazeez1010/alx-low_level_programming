@@ -2,28 +2,29 @@
 #include <ctype.h>
 
 /**
- * main - prints all possible combinations of 
- * single-digit numbers
+ * main - prints all possible different  combinations of
+ * two digit
  * Return: returns 0
  */
 int main(void)
 {
-        int i, j;
+	int i, j;
 
-        i = 0;
+	i = 0;
 	j = 0;
-        while (i <= 9)
-        {
+	while (i <= 9)
+	{
 		j = i + 1;
 		while (j <= 9)
 		{
 			putchar('0' + i);
 			putchar('0' + j);
-			if (i < 8){
-			putchar(',');
-			putchar(' ');
-			j++;
-			} 
+			if (i < 8)
+			{
+				putchar(',');
+				putchar(' ');
+				j++;
+			}
 			else
 			{
 				j++;
@@ -31,19 +32,7 @@ int main(void)
 		}
 		i++;
 	}
-        putchar('\n');
+	putchar('\n');
 
-        return (0);
+	return (0);
 }
-
-/*
-if (i <= 8)
-                {
-                putchar(',');
-                putchar(' ');
-                i++;
-                }
-                else
-                {
-                i++;
-                } */
