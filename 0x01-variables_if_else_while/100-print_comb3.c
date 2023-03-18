@@ -13,24 +13,37 @@ int main(void)
         i = 0;
 	j = 0;
         while (i <= 9)
-	while (j <= 9)
         {
-                putchar('0' + i);
-		putchar('1' + j);
-                if ((i <= 8) && (i <= 7))
-                {
-                putchar(',');
-                putchar(' ');
-                i++;
-		j++;
-                }
-                else
-                {
-                i++;
-		j++;
-                }
-        }
+		j = i + 1;
+		while (j <= 9)
+		{
+			putchar('0' + i);
+			putchar('0' + j);
+			if (i < 8){
+			putchar(',');
+			putchar(' ');
+			j++;
+			} 
+			else
+			{
+				j++;
+			}
+		}
+		i++;
+	}
         putchar('\n');
 
         return (0);
 }
+
+/*
+if (i <= 8)
+                {
+                putchar(',');
+                putchar(' ');
+                i++;
+                }
+                else
+                {
+                i++;
+                } */
