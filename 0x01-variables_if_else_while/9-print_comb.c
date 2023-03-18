@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 /**
- * main - prints all possible combinations of 
+ * main - prints all possible combinations of
  * single-digit numbers
  * Return: returns 0
  */
