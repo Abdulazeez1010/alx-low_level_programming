@@ -10,13 +10,18 @@ int main(void)
 {
 	int i;
 
-	i = '0';
-	while (i <= '9')
+	i = 0;
+	while (i <= 9)
 	{
-		putchar(i);
+		putchar('0' + i);
+		if (i <= 8){
 		putchar(',');
 		putchar(' ');
 		i++;
+		} else 
+		{
+		i++;
+		}
 	}
 	putchar('\n');
 
