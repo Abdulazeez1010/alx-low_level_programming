@@ -31,6 +31,7 @@ int main(void)
 				j = a;
 				while (j <= 9)
 				{
+					k = i + 1;
 					while (k <= 9)
 					{
 						n = j + 1;
