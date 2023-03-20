@@ -3,7 +3,7 @@
 /**
  * main - prints all possible combinations of
  * two two-digit numbers
- * return : returns 0 if successful
+ * Return: returns 0
  */
 int main(void)
 {
@@ -25,6 +25,6 @@ int main(void)
 			}
 		}
 	putchar('\n');
-	
+
 	return (0);
 }
