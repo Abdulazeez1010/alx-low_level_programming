@@ -1,68 +1,31 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * main - prints all possible combinations of
- * two two digits
- * Return: returns 0
+ * two two-digit numbers
+ * return : returns 0 if successful
  */
-
 int main(void)
 {
-	int b;
+	int i, j;
 
-	b = 0;
-	while (b <= 9)
-	{
-		int a;
-
-		a = 0;
-		while(a <= 9)
+	for(i = 0; i <= 99; i++)
+		for(j = i + 1; j <= 99; j++)
 		{
-			int i, j, k, n;
-
-			i = 0;
-			j = 0;
-			k = 0;
-			n = 0;
-			i = b;
-			while (i <= 9)
+			
+			putchar('0' + i/10);
+			putchar('0' + i%10);
+			putchar(' ');
+			putchar('0' + j/10);
+			putchar('0' + j%10);
+			if (!((('0' + i/10) == '9') && (('0' + i%10) == '8')
+				&& (('0' + j/10) == '9') && (('0' + j%10) == '9')))
 			{
-				j = a;
-				while (j <= 9)
-				{
-					k = i;
-					while (k <= 9)
-					{
-						n = j + 1;
-						while (n <= 9)
-						{
-							putchar('0' + i);
-							putchar('0' + j);
-							putchar(' ');
-							putchar('0' + k);
-							putchar('0' + n);
-							if (!((i == 9) && (j == 8) && (k == 9) && (n == 9)))
-							{
-								putchar(',');
-								putchar(' ');
-								n++;
-							}
-							else
-							{
-								n++;
-							}
-						}
-						k++;
-					}
-					j++;
-				}
-				i++;
+				putchar(',');
+				putchar(' ');
 			}
-			a++;
 		}
-		b++;
-	}
 	putchar('\n');
+	
 	return (0);
 }
