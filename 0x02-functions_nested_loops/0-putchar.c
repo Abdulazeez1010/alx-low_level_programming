@@ -2,7 +2,8 @@
 
 /**
  * main - prints _putchar
- * Return : returns 0 if succesful
+ *
+ * Return: returns 0 if succesful
  */
 int main(void)
 {
