@@ -4,17 +4,17 @@
  * print_last_digit - prints the last digit of a number
  * @x: The number to be checked
  *
- * Return: absolute value
+ * Return: return last digit
  */
 int print_last_digit(int x)
 {
 	int l;
 
+	l = x % 10;
 	if (x < 0)
 	{
 		x = -x;
 	}
-	l = x % 10;
 	_putchar('0' + l);
 	return (l);
 }
