@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	unsigned long int i, j, k, sum;
+	float i, j, k, sum;
 
 	j = 0;
 	k = 1;
@@ -16,7 +16,7 @@ int main(void)
 		sum = j + k;
 		j = k;
 		k = sum;
-		printf("%lu", sum);
+		printf("%.0f", sum);
 		if (i != 97)
 		{
 			printf(", ");
