@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int i, j, k, sum;
+	long int i, j, k, sum;
 
 	j = 0;
 	k = 1;
@@ -15,7 +15,7 @@ int main(void)
 		sum = j + k;
 		j = k;
 		k = sum;
-		printf("%d", sum);
+		printf("%ld", sum);
 		if (i != 49)
 		{
 			printf(", ");
