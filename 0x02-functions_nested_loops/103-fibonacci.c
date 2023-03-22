@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	long long int i, j, k, sum, even_sum;
+	unsigned long int i, j, k, sum, even_sum;
 
 	j = 0;
 	k = 1;
@@ -22,7 +22,7 @@ int main(void)
 		if (sum % 2 == 0)
 			even_sum = even_sum + sum;
 	}
-	printf("%lld", even_sum);
+	printf("%lu", even_sum);
 	printf("\n");
 	return (0);
 }
