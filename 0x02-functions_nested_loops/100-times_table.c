@@ -1,68 +1,40 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * print_times_table - prints the n times table, starting with 0 and max of 15
+ * @n: the value of n times to be printed
  */
 void print_times_table(int n)
 {
-	if (n > 0 && n <= 15)
-	{
-		int i, j, r;
+int i, j, p;
 
-		for (i = 0; i <= n;
-		i++)
-		{
-			for (j = 0;
-			j <= n; j++)
-			{
-				r = i * j;
-				if (i == 0)
-				{
-					printf("%d", r);
-					if (j != n)
-					{
-						printf(",   ");
-					}
-				}
-				if (r == 0 && j == 0 && i != 0)
-				{
-					printf("%d,", r);
-				}
-				if (r >= 1 && r <= 12)
-				{
-					if (r <= 9)
-					{
-						printf("   ");
-					}
-					if (r > 9)
-					{
-						printf("  ");
-					}
-					printf("%d", r);
-					if (j != n)
-					{
-						printf(",");
-					}
-				}
-
-				else if (r > 12)
-				{
-				if (r <= 99)
-				{
-				printf("  ");
-				}
-				else if (r > 99)
-				{
-				printf(" ");
-				}
-					printf("%d", r);
-					if (j != n)
-					{
-						printf(",");
-					}
-				}
-			}
-			printf("\n");
-		}
-	}
+if (n >= 0 && n <= 15)
+{
+for (i = 0; i <= n; i++)
+{
+_putchar('0');
+for (j = 1; j <= n; j++)
+{
+_putchar(',');
+_putchar(' ');
+p = i * j;
+if (p <= 99)
+_putchar(' ');
+if (p <= 9)
+_putchar(' ');
+if (p >= 100)
+{
+_putchar((p / 100) + '0');
+_putchar(((p / 10)) % 10 + '0');
 }
+else if (p <= 99 && p >= 10)
+{
+_putchar((p / 10) + '0');
+}
+_putchar((p % 10) + '0');
+}
+_putchar('\n');
+}
+}
+}
+
