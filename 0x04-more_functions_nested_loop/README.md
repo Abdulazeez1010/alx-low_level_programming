@@ -1,2 +1,1 @@
-this project C is about learning More functions and more nested loops in C
-
+This project is about learning More functions and more nested loops in C
