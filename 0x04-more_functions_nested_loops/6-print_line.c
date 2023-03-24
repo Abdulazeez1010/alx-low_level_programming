@@ -2,8 +2,7 @@
 
 /**
  * print_line - prints n lines
- *
- * Return: lines
+ * @n: Number of lines to be printed
  */
 
 void print_line(int n)
