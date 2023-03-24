@@ -2,6 +2,7 @@
 
 /**
  * print_diagonal - prints diagonals
+ * @n: Number of diagonals to be printed
  */
 void print_diagonal(int n)
 {
