@@ -19,6 +19,7 @@ char *leet(char *s)
 			if (s[i] == letters[j])
 			{
 				s[i] = numbers[j];
+				break;
 			}
 		}
 		i++;
