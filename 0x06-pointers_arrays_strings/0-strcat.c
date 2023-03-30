@@ -2,7 +2,7 @@
 
 /**
  * str_len - calculates the length of a string
- * @ptr : string ot determine the length
+ * @ptr: string ot determine the length
  * Return: returns length of string
  */
 int str_len(char *ptr)
@@ -20,8 +20,8 @@ int str_len(char *ptr)
 
 /**
  * _strcat - concatenates two strings
- * @dest : string to concatenate on
- * @src : string to add
+ * @dest: string to concatenate on
+ * @src: string to add
  * Return: returns dest
  */
 
