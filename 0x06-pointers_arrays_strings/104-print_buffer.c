@@ -4,8 +4,7 @@
 /**
  * print_buffer - prints buffer
  * @b: buffer
- * @size: size
- * Return: void
+ * @size: size of buffer
  */
 
 void print_buffer(char *b, int size)
