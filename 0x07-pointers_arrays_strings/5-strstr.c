@@ -28,10 +28,10 @@ char *_strstr(char *haystack, char *needle)
 				{
 					break;
 				}
-				if (haystack[k] == needle[j])
-				{
-					return (&haystack[i]);
-				}
+			}
+			if (haystack[k] == needle[j])
+			{
+				return (&haystack[i]);
 			}
 		}
 		i++;
