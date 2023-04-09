@@ -6,7 +6,7 @@
  * main - The function adds positive numbers
  * @argc : argument counter
  * @argv : argument vector
- * Return: Return 1 if successful, 1 if error
+ * Return: Return 0 if successful, 1 if error
  */
 int main(int argc, char *argv[])
 {
@@ -17,20 +17,24 @@ int main(int argc, char *argv[])
 		printf("0\n");
 	}
 
-	if (argc >= 2)
+	if (argc > 2)
 	{
 		sum = 0;
 		for (i = 1; i < argc; i++)
 		{
-			if (atoi(argv[i]) >= 0)
-			{
-				sum += atoi(argv[i]);
-			}
-			else if (!isdigit(atoi(argv[i])))
+			char *endptr;
+			long n = strtol(argv[i], &endptr, 10);
+
+			if (*endptr != '\0')
 			{
 				printf("Error\n");
 				return (1);
 			}
+			if (n < 0)
+			{
+				return (1);
+			}
+			sum += n;
 		}
 		printf("%d\n", sum);
 	}
