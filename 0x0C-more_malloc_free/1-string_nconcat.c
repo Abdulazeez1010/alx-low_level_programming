@@ -18,7 +18,7 @@ int str_len(char *s)
 	return (i);
 }
 /**
- * string_nconcat - Teh function concatenates two strings
+ * string_nconcat - The function concatenates two strings
  * @s1 : string 1
  * @s2 : string 2
  * @n : Number of bytes to concatenate
@@ -37,6 +37,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len1 = str_len(s1);
 	if (s2 != NULL)
 		len2 = str_len(s2);
+	if (n >= len2)
+		n = len2;
 
 	str = malloc(sizeof(char) * (len1 + n + 1));
 	if (str == NULL)
@@ -47,8 +49,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	for (j = 0; j < n && j < len2; j++)
 	{
-		str[i++] = s2[j];
+		str[len1 + j] = s2[j];
 	}
-	str[i++] = '\0';
+	str[i + j] = '\0';
 	return (str);
 }
