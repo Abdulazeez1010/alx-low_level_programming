@@ -10,13 +10,13 @@
  */
 int main(int argc, char *argv[])
 {
-	long double prod;
+	long int prod;
 
 	if (argc == 3)
 	{
 		char *endptr;
-		long double n1 = strtol(argv[1], &endptr, 10);
-		long double n2 = strtol(argv[2], &endptr, 10);
+		long int n1 = strtol(argv[1], &endptr, 10);
+		long int n2 = strtol(argv[2], &endptr, 10);
 
 		if (*endptr != '\0')
 		{
@@ -34,6 +34,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	printf("%.0Lf\n", prod);
+	printf("%ld\n", prod);
 	return (0);
 }
