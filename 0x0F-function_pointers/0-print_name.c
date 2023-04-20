@@ -8,10 +8,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	char *name_copy = malloc(strlen(name) + 1);
-	if (name_copy == NULL)
+	if (name == NULL)
 		return;
-	strcpy(name_copy, name);
-	f(name_copy);
-	free(name_copy);
+	f(name);
 }
