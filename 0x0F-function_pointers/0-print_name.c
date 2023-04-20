@@ -1,5 +1,6 @@
 #include "function_pointers.h"
-
+#include <stdlib.h>
+#include <string.h>
 /**
  * print_name - The function printa a name
  * @name : The name to be printed
@@ -7,5 +8,10 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	char *name_copy = malloc(strlen(name) + 1);
+	if (name_copy == NULL)
+		return;
+	strcpy(name_copy, name);
+	f(name_copy);
+	free(name_copy);
 }
