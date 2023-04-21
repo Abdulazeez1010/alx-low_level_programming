@@ -14,8 +14,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	if (separator == NULL)
 		separator = "";
-	if (n == 0)
-		printf("\n");
 
 	va_start(ap, n);
 
