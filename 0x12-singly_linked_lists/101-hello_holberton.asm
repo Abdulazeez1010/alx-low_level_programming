@@ -9,7 +9,7 @@ main:
 	mov rax, 1	; system call for write
 	mov rdi, 1	; file descriptor for stdout
 	mov rsi, msg	; message to write
-	mov rdx, 16	; message length
+	mov rdx, 17	; message length
 	syscall		; call kernel to perform system call
 
 	; exit program
