@@ -9,8 +9,6 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t i;
 	const listint_t *ptr = NULL;
-	const listint_t *check_ptr = NULL;
-	int check = 0;
 
 	if (head == NULL)
 		return (0);
@@ -19,15 +17,13 @@ size_t print_listint_safe(const listint_t *head)
 	while (ptr != NULL)
 	{
 		printf("[%p] %d\n", (void *)ptr, ptr->n);
+		ptr = ptr->next;
 		i++;
-		check_ptr = ptr->next;
-		if (check_ptr <= ptr && check == 1)
+		if (i >100)
 		{
-			printf("-> [%p] %d\n", (void *)check_ptr, check_ptr->n);
-			break;
+			printf("-> [%p] %d\n", (void *)ptr, ptr->n);
+			exit(98);
 		}
-		ptr = check_ptr;
-		check = 1;
 	}
 	return (i);
 }
