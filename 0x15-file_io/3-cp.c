@@ -37,14 +37,11 @@ int main(int argc, char *argv[])
 		}
 		if (bytes_written != bytes_read)
 		{
-			dprintf(STDERR_FILENO, "Error: Write error while copying file %s\n",
-					argv[1]);
 			exit(99);
 		}
 	}
 	if (bytes_read == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Read error while copying file %s\n", argv[1]);
 		exit(98);
 	}
 	if (close(file_from) == -1)
