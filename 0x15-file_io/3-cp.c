@@ -44,11 +44,13 @@ int main(int argc, char *argv[])
 	{
 		exit(98);
 	}
+	close(file_from);
 	if (close(file_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
+	close(file_to);
 	if (close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
