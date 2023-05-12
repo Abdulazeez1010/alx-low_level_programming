@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 	ssize_t bytes_read, bytes_written;
 	int file_from;
 	int file_to;
+	mode_t file_mode;
 
 	if (argc != 3)
 	{
@@ -30,7 +31,9 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	/*file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);*/
+	file_mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	file_to = open(argv[2], O_WRONLY| O_CREAT | O_TRUNC, file_mode & ~umask(0));
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
