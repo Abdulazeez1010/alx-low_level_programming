@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
 		}
 		if (bytes_written != bytes_read)
 		{
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 			exit(99);
 		}
 	}
