@@ -31,9 +31,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	/*file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);*/
 	file_mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	file_to = open(argv[2], O_WRONLY| O_CREAT | O_TRUNC, file_mode & ~umask(0));
+	umask(0);
+	file_to = open(argv[2], O_WRONLY| O_CREAT | O_TRUNC, file_mode);
+	if (file_to != -1)
+		chmod(argv[2], file_mode);
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
@@ -49,6 +51,11 @@ int main(int argc, char *argv[])
 		}
 	}
 	if (bytes_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (bytes_read == 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
