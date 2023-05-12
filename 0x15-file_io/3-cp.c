@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 		if (bytes_written == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+			exit(99);
 		}
 		if (bytes_written != bytes_read)
 		{
@@ -42,6 +43,7 @@ int main(int argc, char *argv[])
 	}
 	if (bytes_read == -1)
 	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (close(file_from) == -1)
