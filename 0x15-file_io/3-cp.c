@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * close_files - Closes files
+ * @file_from : First file
+ * @file_to : Second file
+ */
+void close_files(int file_from, int file_to)
+{
+	if (close(file_from) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
+	if (close(file_to) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+		exit(100);
+	}
+}
+
+/**
  * main - The program copies the content of a file to another file
  * @argc : Argument count
  * @argv : Argument vector
@@ -18,11 +37,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	/*if (strcmp(argv[1], argv[2]) == 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Input and output files are the same\n");
-		exit(97);
-	}*/
+
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
@@ -50,15 +65,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	if (close(file_from) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		exit(100);
-	}
-	if (close(file_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
-		exit(100);
-	}
+	close_files(file_from, file_to);
 	return (0);
 }
