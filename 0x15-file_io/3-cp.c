@@ -12,18 +12,17 @@ int main(int argc, char *argv[])
 	ssize_t bytes_read, bytes_written;
 	int file_from;
 	int file_to;
-	/*mode_t file_mode;*/
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (strcmp(argv[1], argv[2]) == 0)
+	/*if (strcmp(argv[1], argv[2]) == 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Input and output files are the same\n");
 		exit(97);
-	}
+	}*/
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
@@ -31,12 +30,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	/*file_mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	umask(0);
-	file_to = open(argv[2], O_WRONLY| O_CREAT | O_TRUNC, file_mode);*/
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	/*if (file_to != -1)
-		chmod(argv[2], file_mode);*/
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
