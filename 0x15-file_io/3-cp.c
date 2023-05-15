@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		chmod(argv[2], file_mode);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((bytes_read = read(file_from, buffer, sizeof(buffer))) > 0)
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		bytes_written = write(file_to, buffer, bytes_read);
 		if (bytes_written == -1 || bytes_written != bytes_read)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
