@@ -22,7 +22,7 @@ int _sqrt_recursion_helper(int i, int n)
 {
 	if (i * i == n)
 		return (i);
-	if (i * i < 1)
+	if (i * i > n)
 		return (-1);
 	return (_sqrt_recursion_helper(i + 1, n));
 }
