@@ -18,11 +18,11 @@ int _sqrt_recursion(int n)
  * @n : Number to determine the square root
  * Return: Returns the number square root
  */
-int _sqrt_recursion_helper(int j, int n)
+int _sqrt_recursion_helper(int i, int n)
 {
-	if (j * j == n)
-		return (j);
-	if (j * j < 1)
+	if (i * i == n)
+		return (i);
+	if (i * i < 1)
 		return (-1);
-	return (_sqrt_recursion_helper(j+1, n));
+	return (_sqrt_recursion_helper(i + 1, n));
 }
