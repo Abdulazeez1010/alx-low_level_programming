@@ -18,8 +18,8 @@ int str_len(char *s)
 }
 
 /**
- * _strdup - The function returns a pointer to a newly allocated space in memory,
- * which contains a copy of the string given as a parameter
+ * _strdup - The function returns a pointer to a newly allocated space in
+ * memory, which contains a copy of the string given as a parameter
  * @str : The string given as parameter
  * Return: Returns a pointer to the newly allocated space
  */
@@ -28,9 +28,9 @@ char *_strdup(char *str)
 	int i;
 	char *s;
 
-	if(str == NULL)
+	if (str == NULL)
 		return (NULL);
-	s = malloc (sizeof(char) * (str_len(str) + 1));
+	s = malloc(sizeof(char) * (str_len(str) + 1));
 	if (s == NULL)
 		return (NULL);
 
