@@ -10,6 +10,15 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
+	char *name_copy, *owner_copy;
+
+	name_copy = strdup(name);
+	if (name_copy == NULL)
+		return (NULL);
+
+	owner_copy = strdup(owner);
+	if (owner_copy == NULL)
+		return (NULL);
 
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
