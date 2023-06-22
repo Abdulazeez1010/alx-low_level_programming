@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	size_t i, num_bytes;
-	unsigned char *op_codes =(unsigned char *)&main;
+	unsigned char *op_codes = (unsigned char *)&main;
 
 	if (argc != 2)
 	{
