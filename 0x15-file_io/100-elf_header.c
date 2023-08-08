@@ -1,6 +1,7 @@
 #include "main.h"
 
-/** display_error  - The function prints error message
+/**
+ * display_error  - The function prints error message
  * @message : The error to display
  */
 void display_error(const char *message)
@@ -11,7 +12,7 @@ void display_error(const char *message)
 
 /**
  * main - The main file
- * @argc : The argument count 
+ * @argc : The argument count
  * @argv : The argument count
  * Return: Returns 0 on success
  */
@@ -27,12 +28,12 @@ int main(int argc, char *argv[])
 	}
 
 	fd = open(argv[1], O_RDONLY);
-	if (fd == -1) 
+	if (fd == -1)
 	{
 		display_error("Failed to open the file.");
 	}
 	bytes_read = read(fd, &header, sizeof(Elf64_Ehdr));
-	if (bytes_read != sizeof(Elf64_Ehdr)) 
+	if (bytes_read != sizeof(Elf64_Ehdr))
 	{
 		display_error("Failed to read ELF header.");
 	}
