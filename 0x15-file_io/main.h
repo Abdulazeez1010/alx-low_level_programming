@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <elf.h>
+#include <inttypes.h>
 
 #define BUFFER 1024
 
